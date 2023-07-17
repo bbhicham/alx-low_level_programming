@@ -23,17 +23,17 @@ int main(void)
             {
                 if (sum % 10 == 0 && i > 0)
                 {
-                    j = t;
-                t++;
-            }
-            else
-            {
-                putchar('0' + i);
-                putchar('0' + j);
-                putchar(' ');
-                if (sum != 89)
-                putchar(','); 
-            }
+                  j = t;
+                  t++;
+                }
+                else
+                {
+                  putchar('0' + i);
+                  putchar('0' + j);
+                  putchar(' ');
+                  if (sum != 89)
+                  putchar(','); 
+                }
             }
         }
     }
