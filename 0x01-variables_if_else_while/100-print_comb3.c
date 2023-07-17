@@ -28,9 +28,9 @@ int main(void)
                 }
                 else
                 {
+                  putchar(' ');
                   putchar('0' + i);
                   putchar('0' + j);
-                  putchar(' ');
                   if (sum != 89)
                   putchar(','); 
                 }
