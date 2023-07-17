@@ -28,6 +28,7 @@ int main(void)
                 }
                 else
                 {
+                  if (sum != 1)
                   putchar(' ');
                   putchar('0' + i);
                   putchar('0' + j);
