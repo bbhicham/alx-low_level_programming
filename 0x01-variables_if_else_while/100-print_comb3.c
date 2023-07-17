@@ -12,16 +12,18 @@ int main(void)
     int i;
     int j;
     int sum;
-    int t = 0;
+    int t = 1;
 
     for (i = 0; i < 10; i++)
     {
-        for (j = 1; j < 10; j++)
+        for (j = 0; j < 10; j++)
         {   
             sum = i * 10 + j;
-            if (sum % 10 == 0 && i > 0)
+            if (sum != 0)
             {
-                j = t;
+                if (sum % 10 == 0 && i > 0)
+                {
+                    j = t;
                 t++;
             }
             else
@@ -31,6 +33,7 @@ int main(void)
                 putchar(' ');
                 if (sum != 89)
                 putchar(','); 
+            }
             }
         }
     }
