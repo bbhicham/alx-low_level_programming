@@ -17,7 +17,7 @@ for (j = i + 1; j < 10; j++)
 {
 for (k = j + 1; k < 10; k++)
 {
-if (i + j + k == 3)
+if (i + j + k != 3)
 {
 putchar(' ');
 }
