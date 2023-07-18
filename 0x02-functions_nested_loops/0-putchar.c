@@ -1,15 +1,10 @@
-#include <main.h>
+#include "main.h"
 
-int main()
-{
-    int i;
-    char put[] = "_putchar";
-     
-    for ( i = 0; i < 8; i++)
-    {
-        _putchar(put[i]);
-    }
+int main () {
+    
 
-    _putchar('\n');
-    return (0);
+    char ch = 'A';
+    _putchar(ch); // This will use the custom _putchar implementation from _putchar.c
+    return 0;
+    // More code...
 }
