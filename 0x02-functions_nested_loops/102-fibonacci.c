@@ -8,9 +8,10 @@
 int main(void)
 {
 int fibNumbers[50];
+int i;
 fibNumbers[0] = 1;
 fibNumbers[1] = 2;
-int i;
+
 for (i = 2; i < 50; i++)
 {
 fibNumbers[i] = fibNumbers[i - 1] + fibNumbers[i - 2];
