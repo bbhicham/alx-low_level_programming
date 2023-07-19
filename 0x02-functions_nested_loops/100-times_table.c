@@ -29,7 +29,7 @@ void print_times_table(int n) {
         _putchar(((mult / 10)%10) + '0');
         _putchar((mult % 10) + '0');
       }
-      if (j != 9) {
+      if (j != n) {
         _putchar(',');
       }
     }
