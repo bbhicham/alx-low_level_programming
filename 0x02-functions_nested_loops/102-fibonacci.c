@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-int fibNumbers[50];
+long fibNumbers[50];
 int i;
 fibNumbers[0] = 1;
 fibNumbers[1] = 2;
