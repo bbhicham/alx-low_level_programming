@@ -18,29 +18,29 @@ for (i = 0; i < 10; i++)
         {
             if (j != 0 )
         {
-           putchar(' ');
-            putchar(' ');
+           _putchar(' ');
+            _putchar(' ');
         }
            
-            putchar(mult + '0');
+            _putchar(mult + '0');
           
         }
         else
         {  
-            putchar(' ');
-            putchar((mult/10+'0'));
-            putchar((mult%10)+'0');
+            _putchar(' ');
+            _putchar((mult/10+'0'));
+            _putchar((mult%10)+'0');
         }
           if (j != 9)
         {
-           putchar(',');
+           _putchar(',');
            
         }
         
         
         
     }
-     putchar('\n');
+     _putchar('\n');
 }
 
 
