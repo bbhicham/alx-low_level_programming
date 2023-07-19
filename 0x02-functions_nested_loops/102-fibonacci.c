@@ -10,13 +10,13 @@ int main(void)
 int fibNumbers[50];
 fibNumbers[0] = 1;
 fibNumbers[1] = 2;
-
-for (int i = 2; i < 50; i++)
+int i;
+for (i = 2; i < 50; i++)
 {
 fibNumbers[i] = fibNumbers[i - 1] + fibNumbers[i - 2];
 }
 
-for (int i = 0; i < 50; i++)
+for (i = 0; i < 50; i++)
 {
 printf("%d", fibNumbers[i]);
 if (i < 49)
