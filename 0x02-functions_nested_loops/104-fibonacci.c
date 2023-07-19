@@ -1,45 +1,45 @@
 #include <stdio.h>
 
 /**
- * main - prints the first 100 Fibonacci numbers
+ * main - 100 Fibonacci numbers
  *
  * Return: Always 0 (Success)
  */
 
 int main(void)
 {
-    unsigned long int num_fibonacci = 100;
-    unsigned long int fib_prev = 1;
-    unsigned long int fib_current = 2;
-    unsigned long int limit = 1000000000;
-    unsigned long int fib_prev_high;
-    unsigned long int fib_prev_low;
-    unsigned long int fib_current_high;
-    unsigned long int fib_current_low;
     unsigned long int i;
-    printf("%lu", fib_prev);
+    unsigned long int first = 1;
+    unsigned long int second = 2;
+    unsigned long int limit = 1000000000;
+    unsigned long int first_high;
+    unsigned long int first_low;
+    unsigned long int second_high;
+    unsigned long int second_low;
 
-    for (i = 1; i < num_fibonacci; i++)
+    printf("%lu", first);
+
+    for (i = 1; i < 91; i++)
     {
-        printf(", %lu", fib_current);
-        fib_current += fib_prev;
-        fib_prev = fib_current - fib_prev;
+        printf(", %lu", second);
+        second += first;
+        first = second - first;
     }
 
-    fib_prev_high = (fib_prev / limit);
-    fib_prev_low = (fib_prev % limit);
-    fib_current_high = (fib_current / limit);
-    fib_current_low = (fib_current % limit);
+    first_high = (first / limit);
+    first_low = (first % limit);
+    second_high = (second / limit);
+    second_low = (second % limit);
 
-    for (i = num_fibonacci + 1; i < num_fibonacci + 8; ++i)
+    for (i = 92; i < 99; ++i)
     {
-        printf(", %lu", fib_current_high + (fib_current_low / limit));
-        printf("%lu", fib_current_low % limit);
-        fib_current_high = fib_current_high + fib_prev_high;
-        fib_prev_high = fib_current_high - fib_prev_high;
-        fib_current_low = fib_current_low + fib_prev_low;
-        fib_prev_low = fib_current_low - fib_prev_low;
+        printf(", %lu", second_high + (second_low / limit));
+        printf("%lu", second_low % limit);
+        second_high = second_high + first_high;
+        first_high = second_high - first_high;
+        second_low = second_low + first_low;
+        first_low = second_low - first_low;
     }
     printf("\n");
-    return 0;
+    return (0);
 }
