@@ -19,7 +19,7 @@ fibNumbers[i] = fibNumbers[i - 1] + fibNumbers[i - 2];
 
 for (i = 0; i < 50; i++)
 {
-printf("%d", fibNumbers[i]);
+printf("%lu", fibNumbers[i]);
 if (i < 49)
 {
 printf(", ");
