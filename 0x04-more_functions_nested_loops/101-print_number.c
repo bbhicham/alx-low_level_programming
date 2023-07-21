@@ -33,7 +33,7 @@ void print_number(int n)
 	      number = -number;
 	      _putchar('-');
 	   }
-  for (int i = length-1 ; i >=0; i--) {
+  for (i = length-1 ; i >=0; i--) {
       p =1;
       if(i >=1){
         for (j = 0; j < i; j++) {
