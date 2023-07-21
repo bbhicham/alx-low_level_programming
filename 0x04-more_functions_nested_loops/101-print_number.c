@@ -1,10 +1,8 @@
 #include "main.h"
-
 /**
  * print_number - print any int
  * @n: n int well be printed
  */
-
 void print_number(int n)
 {
 int length = 0;
@@ -22,9 +20,7 @@ number = n;
 len = n;
 }
 if (len == 0)
-{
 length = 1;
-}
 else
 {
 while (len != 0)
@@ -43,13 +39,9 @@ for (j = 0; j < i; j++)
 p *= 10;
 }
 if (i == length - 1)
-{
 _putchar('0' + (number / p));
-}
 else
-{
 _putchar('0' + ((number / p) % 10));
-}
 }
 else
 {
