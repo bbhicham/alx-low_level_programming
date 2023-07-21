@@ -12,17 +12,17 @@ for (i = 0; i < n; i++)
 {
 for (j = 0; j < i; j++)
 {
-putchar(' ');
+_putchar(' ');
 }
 
-putchar('\\');
+_putchar('\\');
 
 if (i != (n - 1))
 {
-putchar('\n');
+_putchar('\n');
 }
 
 }
 
-putchar('\n');
+_putchar('\n');
 }
