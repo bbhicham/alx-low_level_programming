@@ -5,33 +5,41 @@ void print_number(int n)
 {
 
   int length = 0;
-  int number = n;
+  unsigned int number;
   int i;
   int p;
   int j;
+ 
+    if (n < 0)
+	   {
+	    _putchar('-');
+	      number = (unsigned int)(-n);
+	     
+	   }else{
+	       number = n;
+	   }
+ 
   if (number == 0)
   {
       length = 1;
   }
   else
   {
-      if (number < 0)
-	   {
-	      number = -number;
-	   }
-
       while (number != 0)
      	{
     	  number /= 10;
     	  length++;
       	}
   }
-  number = n;
-  if (number < 0)
+  
+   if (n < 0)
 	   {
-	      number = -number;
-	      _putchar('-');
+	      number = (unsigned int)(-n);
+	     
+	   }else{
+	       number = n;
 	   }
+ 
   for (i = length-1 ; i >=0; i--) {
       p =1;
       if(i >=1){
