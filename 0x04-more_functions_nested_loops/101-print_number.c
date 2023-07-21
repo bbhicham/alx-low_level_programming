@@ -31,7 +31,7 @@ void print_number(int n)
   if (number < 0)
 	   {
 	      number = -number;
-	      putchar('-');
+	      _putchar('-');
 	   }
   for (int i = length-1 ; i >=0; i--) {
       p =1;
@@ -41,13 +41,13 @@ void print_number(int n)
         }
       
         if(i==length-1){
-         putchar('0' + (number /p)); 
+         _putchar('0' + (number /p)); 
         }else{
-         putchar('0' + ((number /p)%10));
+         _putchar('0' + ((number /p)%10));
         }
         
       }else{
-        putchar('0' + (number  % 10)) ;
+        _putchar('0' + (number  % 10)) ;
       }
   }
   
