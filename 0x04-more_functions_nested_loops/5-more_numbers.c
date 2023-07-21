@@ -20,7 +20,12 @@ _putchar('0' + j / 10);
 _putchar('0' + j % 10);
 
 }
+if (i != 10)
+{
 _putchar('\n');
+}
+
+
 }
 
 }
