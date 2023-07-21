@@ -9,6 +9,7 @@ int i;
 int j;
 
 for (i = 0; i < 11; i++)
+_putchar('\n');
 {
 for (j = 0; j <= 14; j++)
 {
@@ -20,10 +21,7 @@ _putchar('0' + j / 10);
 _putchar('0' + j % 10);
 
 }
-if (i != 10)
-{
-_putchar('\n');
-}
+
 
 
 }
