@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _isupper- check if char is digital
+ * _isdigit- check if char is digital
  * @c: is the char => to be checked
  * Return: 1 if charcter is digital and 0 is otherwise.
  */
