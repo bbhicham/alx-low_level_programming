@@ -48,7 +48,7 @@ _putchar('0' + (number / p));
 }
 else
 {
-putchar('0' + ((number / p) % 10));
+_putchar('0' + ((number / p) % 10));
 }
 }
 else
