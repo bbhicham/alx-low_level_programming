@@ -24,10 +24,10 @@ _putchar(' ');
 
 if (i != (size - 1))
 {
-putchar('\n');
+_putchar('\n');
 }
 
 }
 
-putchar('\n');
+_putchar('\n');
 }
