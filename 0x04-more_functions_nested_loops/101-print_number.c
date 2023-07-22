@@ -5,7 +5,8 @@
  */
 void print_number(int n)
 {
-unsigned int number, len, length = 0;
+int length = 0;
+unsigned int number, len;
 int i, p, j;
 if (n < 0)
 {
