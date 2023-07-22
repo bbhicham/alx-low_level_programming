@@ -5,8 +5,7 @@
  */
 void print_number(int n)
 {
-int length = 0;
-unsigned int number, len;
+unsigned int number, len, length = 0;
 int i, p, j;
 if (n < 0)
 {
@@ -44,8 +43,6 @@ else
 _putchar('0' + ((number / p) % 10));
 }
 else
-{
 _putchar('0' + (number  % 10));
-}
 }
 }
