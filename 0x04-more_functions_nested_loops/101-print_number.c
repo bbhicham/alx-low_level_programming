@@ -5,9 +5,8 @@
  */
 void print_number(int n)
 {
-int length = 0;
 unsigned int number, len;
-int i, p, j;
+int i, p, j, length;
 if (n < 0)
 {
 _putchar('-');
@@ -23,7 +22,7 @@ if (len == 0)
 length = 1;
 else
 {
-for (length; len != 0; length++)
+for (length = 0; len != 0; length++)
 {
 len /= 10;
 }
