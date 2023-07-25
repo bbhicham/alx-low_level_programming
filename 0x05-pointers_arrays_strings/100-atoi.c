@@ -19,7 +19,15 @@ signe *= -1;
 }
 else if (*s >= '0' && *s <= '9')
 {
-num = (num * 10) + (*s - '0');
+if(num == 2147483640)
+{
+num = 2147483648;
+break;
+}else{
+num = (num * 10) + (*s - '0') ;
+}
+
+
 }
 else if (num > 0)
 {
@@ -27,6 +35,14 @@ break;
 }
 } while (*s++);
 
-r = num *signe;
-return (r);
+if(num == 2147483648)
+{
+if (signe = -1)
+{
+return (-num);
+}
+return (num);
+}
+
+
 }
