@@ -19,12 +19,14 @@ signe *= -1;
 }
 else if (*s >= '0' && *s <= '9')
 {
-if(num == 2147483640)
+if (num == 2147483640)
 {
 num = 2147483648;
 break;
-}else{
-num = (num * 10) + (*s - '0') ;
+}
+else
+{
+num = (num * 10) + (*s - '0');
 }
 
 
@@ -35,14 +37,11 @@ break;
 }
 } while (*s++);
 
-if(num == 2147483648)
-{
-if (signe = -1)
+
+if (signe == -1)
 {
 return (-num);
 }
 return (num);
-}
-
 
 }
