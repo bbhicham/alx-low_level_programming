@@ -39,7 +39,7 @@ break;
 
 if (signe == -1)
 {
-return (-num);
+return (num * -1L);
 }
 return (num);
 
