@@ -11,7 +11,7 @@ while (str[i])
 {
 i++;
 }
-star = (i % 2 == 0) ? (i / 2) : ((i - 1) / 2);
+star = (i % 2 == 0) ? (i / 2) : ((i + 1) / 2);
 for (j = star; j < i; j++)
 {
 _putchar(str[j]);
