@@ -6,12 +6,13 @@
 void puts_half(char *str)
 {
 int i = 0;
-int j;
+int j, star;
 while (str[i])
 {
 i++;
 }
-for (j = (i / 2); j < i; j++)
+star = (i % 2 == 0) ? (i / 2) : ((i - 1) / 2);
+for (j = star; j < i; j++)
 {
 _putchar(str[j]);
 }
