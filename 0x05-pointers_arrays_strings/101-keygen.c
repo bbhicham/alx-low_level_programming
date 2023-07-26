@@ -9,20 +9,20 @@
  */
 int main(void)
 {
-    int i;
     const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    const int password_length = 14;
-    char password[password_length];
+    const int password_length = 12;
+    char password[password_length + 1];
+    int i; // Fixed-size array to store the password
     srand(time(NULL));
 
-    for (i = 0; i < password_length-1; i++)
+    for ( i = 0; i < password_length; i++)
     {
         int index = rand() % (sizeof(charset) - 1);
         password[i] = charset[index];
     }
 
     password[password_length] = '\0';
-    printf("%s", password);
+    printf("Random Password: %s\n", password);
 
     return 0;
 }
