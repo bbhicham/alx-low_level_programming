@@ -9,20 +9,16 @@
  */
 int main(void)
 {
-    const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    const int password_length = 12;
-    char password[password_length + 1];
-    int i; // Fixed-size array to store the password
+    int sum;
+    char random_char;
     srand(time(NULL));
-
-    for ( i = 0; i < password_length; i++)
+    while (sum <=2645)
     {
-        int index = rand() % (sizeof(charset) - 1);
-        password[i] = charset[index];
+        random_char = rand() % 128;
+        sum += random_char;
+        putchar(random_char );
     }
-
-    password[password_length] = '\0';
-    printf("Random Password: %s\n", password);
+    putchar(2772 - sum);
 
     return 0;
 }
