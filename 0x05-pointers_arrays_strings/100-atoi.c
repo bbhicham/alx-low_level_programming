@@ -8,38 +8,27 @@
  */
 int _atoi(char *s)
 {
-int num = 0;
-    int signe = 1;
-    int is_min_int = 0;
+unsigned num = 0;
+int signe = 1;
+int r;
 
-    if (*s == '-')
-    {
-        signe *= -1;
-        s++;
-    }
+do {
+if (*s == '-')
+{
+signe *= -1;
+}
+else if (*s >= '0' && *s <= '9')
+{
 
-    while (*s)
-    {
-        if (*s >= '0' && *s <= '9')
-        {
-            int digit = *s - '0';
+num = (num * 10) + (*s - '0') ;
 
-            // Check for overflow before updating num
-            if (!is_min_int && (num > (2147483647 - digit) / 10))
-            {
-                is_min_int = 1; // Handle the special case of INT_MIN
-                num = 2147483647;
-                break;
-            }
+}
+else if (num > 0)
+{
+break;
+}
+} while (*s++);
 
-            num = (num * 10) + digit;
-        }
-        else
-        {
-            break;
-        }
-        s++;
-    }
-
-    return (num * signe);
+r = num *signe;
+return (r);
 }
