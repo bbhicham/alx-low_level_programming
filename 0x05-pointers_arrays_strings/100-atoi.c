@@ -8,7 +8,7 @@
  */
 int _atoi(char *s)
 {
-unsigned num = 0;
+unsigned int num = 0;
 int signe = 1;
 int r;
 
@@ -20,7 +20,7 @@ signe *= -1;
 else if (*s >= '0' && *s <= '9')
 {
 
-num = (num * 10) + (*s - '0') ;
+num = (num * 10) + (*s - '0');
 
 }
 else if (num > 0)
