@@ -9,19 +9,20 @@
  */
 int main(void)
 {
+    int i;
     const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    const int password_length = 12;
-    char password[password_length + 1];
+    const int password_length = 14;
+    char password[password_length];
     srand(time(NULL));
 
-    for (int i = 0; i < password_length; i++)
+    for (i = 0; i < password_length-1; i++)
     {
         int index = rand() % (sizeof(charset) - 1);
         password[i] = charset[index];
     }
 
     password[password_length] = '\0';
-    printf("%s\n", password);
+    printf("%s", password);
 
     return 0;
 }
