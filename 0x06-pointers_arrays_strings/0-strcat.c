@@ -23,10 +23,14 @@ for (j = i; src[l] != '\0'; j++)
 tem[j] = src[l];
 l++;
 }
+l=0;
 for (i = 0; tem[i] != '\0'; i++)
 {
 dest[i] = tem[i];
+l++;
 }
+
+dest[l] = '\0';
 
 return (dest);
 
