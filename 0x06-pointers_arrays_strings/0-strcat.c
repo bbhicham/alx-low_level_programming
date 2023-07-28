@@ -36,9 +36,6 @@ i++;
 l++;
 }
 
-
-dest[l] = '\0';
-
 return (dest);
 
 }
