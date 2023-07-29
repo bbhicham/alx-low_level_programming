@@ -7,12 +7,17 @@
  */
 int main(void)
 {
-int a[5] = {0, 1, 98, 3, 4};
+
+int a[5];
 int *p;
+int m;
 
-p = &a[2];
+a[2] = 1024;
+p = &m;
 
-printf("a[2] = %d\n", *p);
+*(p + 5) = 98;
 
+printf("a[2] = %d\n", a[2]);
 return (0);
 }
+
