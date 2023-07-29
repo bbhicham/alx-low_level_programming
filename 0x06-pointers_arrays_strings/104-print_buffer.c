@@ -39,9 +39,10 @@ void print_buffer(char *b, int size)
 			{
 				int c = *(b + i + j);
 
-				if (c < 32 || c > 126)
-					c = '.';
-				printf("%c", c);
+				if (c >= 32 && c <= 126) // Check for printable characters
+					printf("%c", c);
+				else
+					printf(".");
 			}
 			else
 			{
