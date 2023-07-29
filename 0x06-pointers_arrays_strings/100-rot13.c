@@ -6,19 +6,20 @@
  *
  * Return: A pointer to the changed string.
  */
-char *rot13(char *str)
-{
-int i;
-for (i = 0; str[i] != '\0'; i++)
-{
-char c = str[i];
+char *rot13(char *str) {
+    char *result = str;
 
-if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-{
-char base = (c >= 'a' && c <= 'z') ? 'a' : 'A';
-str[i] = (c - base + 13) % 26 + base;
-}
-}
+    while (*str) {
+        char c = *str;
 
-return (str);
+        if ((c >= 'a' && c <= 'z')) {
+            *str = ((c - 'a' + 13) % 26) + 'a';
+        } else if ((c >= 'A' && c <= 'Z')) {
+            *str = ((c - 'A' + 13) % 26) + 'A';
+        }
+
+        str++;
+    }
+
+    return result;
 }
