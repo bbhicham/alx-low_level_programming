@@ -6,25 +6,29 @@
  *
  * Return: A pointer to the changed string.
  */
-char *rot13(char *str) {
-    char *result = str;
-    char alph[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    char arot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+char *rot13(char *str)
+{
+char *result = str;
+char alph[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char arot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-    while (*str) {
-        char c = *str;
-        char *pos = alph;
+while (*str)
+{
+char c = *str;
+char *pos = alph;
 
-        while (*pos && *pos != c) {
-            pos++;
-        }
+while (*pos && *pos != c)
+{
+pos++;
+}
 
-        if (*pos) {
-            *str = arot[pos - alph];
-        }
+if (*pos)
+{
+*str = arot[pos - alph];
+}
 
-        str++;
-    }
+str++;
+}
 
-    return result;
+return (result);
 }
