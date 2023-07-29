@@ -2,9 +2,9 @@
 
 int main(void)
 {
+int m;
 int a[5];
 int *p;
-int m;
 
 a[2] = 1024;
 p = &m;
