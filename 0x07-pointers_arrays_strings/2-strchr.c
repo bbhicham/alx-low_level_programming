@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdio.h>
+
 /**
  * _memcpy - fill a block of memory with a specific value
  * @s: input
@@ -20,5 +22,5 @@ return(s + i);
 
 }
 
-return ('\0');
+return (NULL);
 }
