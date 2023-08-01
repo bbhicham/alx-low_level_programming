@@ -1,8 +1,6 @@
 #include "main.h"
-
-
 /**
- * _memcpy - fill a block of memory with a specific value
+ * _strchr - fill a block of memory with a specific value
  * @s: input
  * @c:input
  *
