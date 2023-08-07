@@ -25,15 +25,11 @@ i++;
 
 while (s2[j] != '\0')
 j++;
-
-temp = malloc(sizeof(char) * (i + j + 2));
-
+temp = malloc(sizeof(char) * (i + j + 1));
 if (temp == NULL)
 return (NULL);
-
 i = 0;
 j = 0;
-
 while (s1[i] != '\0')
 {
 temp[i] = s1[i];
