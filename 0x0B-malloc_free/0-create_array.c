@@ -13,7 +13,7 @@ char *str;
 unsigned int i;
 
 
-if (size == 0)
+if (size == 0 || str == NULL)
 return ('\0');
 
 str = malloc(sizeof(char) * size);
