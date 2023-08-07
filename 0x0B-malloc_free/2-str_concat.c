@@ -43,7 +43,7 @@ temp[i] = s2[j];
 j++;
 i++;
 }
-
+temp[i] = '\0';
 
 return (temp);
 }
