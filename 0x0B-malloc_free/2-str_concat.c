@@ -44,7 +44,6 @@ j++;
 i++;
 }
 
-temp[i] = '\0';
 
 return (temp);
 }
