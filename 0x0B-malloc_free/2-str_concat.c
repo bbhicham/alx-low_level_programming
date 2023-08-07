@@ -32,12 +32,12 @@ temp = malloc(sizeof(char) * (i + j + 2));
 if (temp == NULL)
 return (NULL);
 
-for (i = 0; s1[i]; i++)
+for (i = 0; s1[i] != '\0'; i++)
 {
 temp[i] = s1[i];
 }
 j = 0;
-while (s2[j])
+while (s2[j] != '\0')
 {
 temp[i] = s2[j];
 j++;
