@@ -11,7 +11,7 @@ char **strtow(char *str)
 {
     char **words = NULL;
     char *token = NULL;
-    int i, word_count = 0;
+    int i, j, word_count = 0;
 
    
     if (str == NULL || *str == '\0')
@@ -38,7 +38,7 @@ char **strtow(char *str)
         if (words[i] == NULL)
         {
            
-            for (int j = 0; j < i; j++)
+            for (j = 0; j < i; j++)
                 free(words[j]);
             free(words);
             return NULL;
