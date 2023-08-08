@@ -10,7 +10,7 @@
 char **strtow(char *str)
 {
     char **words, *word;
-    int i, k = 0, len = 0, num_words = 0, start, end;
+    int i, j, k = 0, len = 0, num_words = 0, start, end;
 
     
     if (str == NULL || *str == '\0')
@@ -32,7 +32,7 @@ char **strtow(char *str)
                 if (word == NULL)
                 {
                    
-                    for (int j = 0; j < num_words; j++)
+                    for ( j = 0; j < num_words; j++)
                         free(words[j]);
                     free(words);
                     return NULL;
