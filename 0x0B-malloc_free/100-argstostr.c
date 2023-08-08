@@ -11,7 +11,8 @@
 char *argstostr(int ac, char **av)
 {
     char *str;
-    int i, j, total_len = 0;
+    int i, j ;
+    int total_len = 0;
     int newline_count = ac - 1;
 
     if (ac == 0 || av == NULL)
