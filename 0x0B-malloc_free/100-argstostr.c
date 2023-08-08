@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <string.h>
 
 /**
  * argstostr - Concatenates all the arguments of the program.
@@ -10,38 +9,34 @@
  */
 char *argstostr(int ac, char **av)
 {
+    int i, n, r = 0, l = 0;
     char *str;
-    int i, j ;
-    int total_len = 0;
-    int newline_count = ac - 1;
 
     if (ac == 0 || av == NULL)
         return NULL;
 
     for (i = 0; i < ac; i++)
     {
-        total_len += strlen(av[i]);
+        for (n = 0; av[i][n]; n++)
+            l++;
     }
+    l += ac;
 
-    total_len += newline_count + 1;
-
-    str = (char *)malloc(total_len * sizeof(char));
-
+    str = malloc(sizeof(char) * (l + 1));
     if (str == NULL)
         return NULL;
-
-    j = 0;
+    
     for (i = 0; i < ac; i++)
     {
-        strcpy(str + j, av[i]);
-        j += strlen(av[i]);
-        if (i < ac - 1)
+        for (n = 0; av[i][n]; n++)
         {
-            str[j] = '\n';
-            j++;
+            str[r] = av[i][n];
+            r++;
         }
+        str[r] = '\n'; // Place the newline character after each argument
+        r++;
     }
-    str[i++] = '\n';
+    str[r] = '\0'; // Add the null terminator at the end
 
     return str;
 }
