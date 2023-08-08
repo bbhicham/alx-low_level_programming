@@ -33,10 +33,10 @@ char *argstostr(int ac, char **av)
             str[r] = av[i][n];
             r++;
         }
-        str[r] = '\n'; // Place the newline character after each argument
+        str[r] = '\n'; 
         r++;
     }
-    str[r] = '\0'; // Add the null terminator at the end
+    str[r] = '\0'; 
 
     return str;
 }
