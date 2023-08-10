@@ -1,6 +1,40 @@
 #include <stdio.h>
 #include "main.h"
 /**
+ * _atoi -  function that convert a string to an integer
+ *
+ * @s: string pointed
+ *
+ * Return: integer convert from s
+ */
+int _atoi(char *s)
+{
+unsigned int num = 0;
+int signe = 1;
+int r;
+
+do {
+if (*s == '-')
+{
+signe *= -1;
+}
+else if (*s >= '0' && *s <= '9')
+{
+
+num = (num * 10) + (*s - '0');
+
+}
+else if (num > 0)
+{
+break;
+}
+} while (*s++);
+
+r = num *signe;
+return (r);
+}
+
+/**
  * main - Entry point
  * @argc: is a count of the arguments supplied to the program
  * @argv:  is an array of pointers to the strings which are those arguments
