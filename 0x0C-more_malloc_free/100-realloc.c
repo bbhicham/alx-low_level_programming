@@ -14,7 +14,7 @@ char *new_ptr;
 char *old_char_ptr;
 
 unsigned int i;
-if (new_size == 0)
+if (new_size == 0 && ptr)
 {
 free(ptr);
 return (NULL);
@@ -36,7 +36,11 @@ if (new_ptr == NULL)
 return (NULL);
 
 old_char_ptr = (char *)ptr;
-
+if (new_size < old_size)
+{
+for (i = 0; i < new_size; i++)
+new_ptr[i] = old_char_ptr[i];
+}
 if (new_size > old_size)
 {
 for (i = 0; i < old_size; i++)
