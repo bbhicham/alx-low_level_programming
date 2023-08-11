@@ -44,5 +44,5 @@ new_char_ptr[i] = old_char_ptr[i];
 }
 free(ptr);
 
-return (new_ptr);
+return (new_char_ptr);
 }
