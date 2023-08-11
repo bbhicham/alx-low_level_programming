@@ -37,10 +37,11 @@ return (NULL);
 
 old_char_ptr = (char *)ptr;
 new_char_ptr = (char *)new_ptr;
-
+if (new_size > old_size)
+{
 for (i = 0; i < old_size; i++)
 new_char_ptr[i] = old_char_ptr[i];
-
+}
 free(ptr);
 
 return (new_ptr);
