@@ -17,16 +17,18 @@ return (NULL);
 
 coll = malloc(size * nmemb);
 
+if (coll == NULL)
+{
+return (NULL);
+}
+
 for (i = 0; i < size * nmemb; i++)
 {
 coll[i] = 0;
 }
 
 
-if (coll == NULL)
-{
-return (NULL);
-}
+
 
 return (coll);
 }
