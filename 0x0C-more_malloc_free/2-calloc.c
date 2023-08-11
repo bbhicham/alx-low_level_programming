@@ -15,8 +15,9 @@ if (nmemb == 0 || size == 0)
 return (NULL);
 }
 
-coll = malloc(nmemb * size);
-for (i = 0; i < size; i++)
+coll = malloc(size * nmemb);
+
+for (i = 0; i < size * nmemb; i++)
 {
 coll[i] = 0;
 }
