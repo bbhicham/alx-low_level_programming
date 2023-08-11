@@ -38,7 +38,7 @@ return (NULL);
 old_char_ptr = (char *)ptr;
 new_char_ptr = (char *)new_ptr;
 
-for (int i = 0; i < old_size; i++)
+for (i = 0; i < old_size; i++)
 new_char_ptr[i] = old_char_ptr[i];
 
 free(ptr);
