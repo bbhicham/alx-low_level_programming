@@ -1,104 +1,101 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
 
-int _isdigit(char c)
+#define ERR_MSG "Error"
+
+/**
+ * is_digit - checks if a string contains a non-digit char
+ * @s: string to be evaluated
+ *
+ * Return: 0 if a non-digit is found, 1 otherwise
+ */
+int is_digit(char *s)
 {
-    return c >= '0' && c <= '9';
+	int i = 0;
+
+	while (s[i])
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
+/**
+ * _strlen - returns the length of a string
+ * @s: string to evaluate
+ *
+ * Return: the length of the string
+ */
 int _strlen(char *s)
 {
-    int length = 0;
+	int i = 0;
 
-    for (; s[length] != '\0'; length++)
-        ;
-
-    return length;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
 
-char *_multiply(char *num1, char *num2)
+/**
+ * print_errors - handles errors for main
+ */
+void print_errors(void)
 {
-    int len1 = _strlen(num1);
-    int len2 = _strlen(num2);
-    int total_len = len1 + len2;
-    int *result = calloc(total_len, sizeof(int));
-    int i, j;
-    if (result == NULL)
-    {
-        perror("Memory allocation failed");
-        exit(EXIT_FAILURE);
-    }
-
-    
-    for (i = len1 - 1; i >= 0; i--)
-        for (j = len2 - 1; j >= 0; j--)
-        {
-            int product = (num1[i] - '0') * (num2[j] - '0');
-            int sum = product + result[i + j + 1];
-
-            result[i + j] += sum / 10;
-            result[i + j + 1] = sum % 10;
-        }
-
-    char *product = malloc(total_len + 1);
-    if (product == NULL)
-    {
-        perror("Memory allocation failed");
-        exit(EXIT_FAILURE);
-    }
-
-    for (i = 0; i < total_len; i++)
-        product[i] = result[i] + '0';
-    product[total_len] = '\0';
-
-    free(result);
-
-    return product;
+	printf("%s\n", ERR_MSG);
+	exit(98);
 }
 
+/**
+ * main - multiplies two positive numbers
+ * @argc: number of arguments
+ * @argv: array of arguments
+ *
+ * Return: always 0 (Success)
+ */
 int main(int argc, char *argv[])
 {
-    if (argc != 3)
-    {
-        printf("Error\n");
-        return 98;
-    }
+	char *num1, *num2;
+	int len1, len2, len, i, carry, digit1, digit2, *result, has_value = 0;
 
-    char *num1 = argv[1];
-    char *num2 = argv[2];
-
-    for (int i = 0; num1[i] != '\0'; i++)
-        if (!_isdigit(num1[i]))
-        {
-            printf("Error\n");
-            return 98;
-        }
-
-    for (int i = 0; num2[i] != '\0'; i++)
-        if (!_isdigit(num2[i]))
-        {
-            printf("Error\n");
-            return 98;
-        }
-
-    if (num1[0] == '0' || num2[0] == '0')
-    {
-        printf("0\n");
-        return 0;
-    }
-
-    char *product = _multiply(num1, num2);
-
-    int i = 0;
-    while (product[i] == '0')
-        i++;
-
-    if (product[i] == '\0')
-        printf("0\n");
-    else
-        printf("%s\n", product + i);
-
-    free(product);
-
-    return 0;
+	num1 = argv[1], num2 = argv[2];
+	if (argc != 3 || !is_digit(num1) || !is_digit(num2))
+		print_errors();
+	len1 = _strlen(num1);
+	len2 = _strlen(num2);
+	len = len1 + len2 + 1;
+	result = malloc(sizeof(int) * len);
+	if (!result)
+		return (1);
+	for (i = 0; i <= len1 + len2; i++)
+		result[i] = 0;
+	for (len1 = len1 - 1; len1 >= 0; len1--)
+	{
+		digit1 = num1[len1] - '0';
+		carry = 0;
+		for (len2 = _strlen(num2) - 1; len2 >= 0; len2--)
+		{
+			digit2 = num2[len2] - '0';
+			carry += result[len1 + len2 + 1] + (digit1 * digit2);
+			result[len1 + len2 + 1] = carry % 10;
+			carry /= 10;
+		}
+		if (carry > 0)
+			result[len1 + len2 + 1] += carry;
+	}
+	for (i = 0; i < len - 1; i++)
+	{
+		if (result[i])
+			has_value = 1;
+		if (has_value)
+			_putchar(result[i] + '0');
+	}
+	if (!has_value)
+		_putchar('0');
+	_putchar('\n');
+	free(result);
+	return (0);
 }
